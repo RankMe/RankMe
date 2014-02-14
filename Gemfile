@@ -15,6 +15,15 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# User annotate to display a model properties according to the database
+gem 'annotate', ">=2.6.0"
+
+# Use devise to handle authentification stuff
+gem 'devise'
+
+# Use active model serializers to create json from the model
+gem "active_model_serializers"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
