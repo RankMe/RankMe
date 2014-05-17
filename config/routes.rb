@@ -1,8 +1,10 @@
 RankMe::Application.routes.draw do
 
-  resources :projects
-  resources :sites
-  resources :keywords
+  resources :projects do
+    resources :sites do
+      resources :keywords
+    end
+  end
 
   root :to => 'pages#home'
 

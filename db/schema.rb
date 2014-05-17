@@ -15,9 +15,12 @@ ActiveRecord::Schema.define(version: 20140214143915) do
 
   create_table "key_words", force: true do |t|
     t.string   "string"
+    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "key_words", ["site_id"], name: "index_key_words_on_site_id"
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -27,8 +30,12 @@ ActiveRecord::Schema.define(version: 20140214143915) do
 
   create_table "sites", force: true do |t|
     t.string   "url"
+    t.integer  "rank"
+    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "sites", ["project_id"], name: "index_sites_on_project_id"
 
 end

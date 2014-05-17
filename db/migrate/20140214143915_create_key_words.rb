@@ -3,6 +3,8 @@ class CreateKeyWords < ActiveRecord::Migration
     create_table :key_words do |t|
       t.string :string
 
+      t.references :site, index: true
+
       t.timestamps
     end
   end
