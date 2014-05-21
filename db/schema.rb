@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140214143915) do
 
   create_table "key_words", force: true do |t|
     t.string   "string"
+    t.integer  "rank"
     t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"

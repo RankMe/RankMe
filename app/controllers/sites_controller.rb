@@ -1,5 +1,14 @@
 class SitesController < ApplicationController
 
+
+	def show
+
+		# récupération du projet et du site en question
+		@project = Project.find(params[:project_id])
+		@site = Site.find(params[:id])
+
+	end
+
 	def destroy
 
 		# récupération du project en fonction de l'id envoyé en paramètre

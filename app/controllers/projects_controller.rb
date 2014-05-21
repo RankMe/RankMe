@@ -13,8 +13,10 @@ class ProjectsController < ApplicationController
 		# récupération du project concerné
 		@project = Project.find(params[:id])
 
+		# suppression du projet
 		@project.destroy
 
+		# redirection vers la liste de tous les projets restant
 		redirect_to projects_path
 	end
 
