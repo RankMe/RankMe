@@ -1,0 +1,25 @@
+<%= link_to 'Retour', projects_path, :class => "btn btn-default btn-sm" %>
+
+
+
+<h2>
+  <%= @project.name %> <%= link_to 'Renomer', edit_project_path(@project.id), :class => "btn btn-warning btn-xs" %>
+</h2>
+
+<hr />
+
+<h3>Liste des sites</h3>
+
+<table class="table ">
+	<thead>
+		<th style="width:70%">URL</th>
+		<th style="width:10%;text-align:center;">Rang</th>
+		<th></th>
+	</thead>
+	<tbody>
+		<%= render @project.sites %>
+	</tbody>
+</table>
+
+
+<%= render "sites/form" %>

@@ -1,0 +1,45 @@
+<tr>
+  <td style="vertical-align:middle;">
+    <%= site.url %>
+  </td>
+  <td style="vertical-align:middle;">
+    <!-- <%= site.rank %> -->
+  </td>
+  <td>
+    <%= link_to "Détails", [site.project, site], class: "btn btn-primary  btn-sm" %>
+	  <%= link_to("Suppr", [site.project, site],
+	               method: :delete,
+	               class: "btn btn-danger btn-xs",
+	               data: { confirm: 'Êtes-vous sûr de vouloir supprimer ce site?' }) %>
+	</td>
+</tr>
+
+ <!-- TODO : afficher tous les mots clefs du site et leur rang -->
+
+<%
+
+
+
+if site.key_words.nil?
+  puts ""
+elsif site.key_words.respond_to?("each")
+  site.key_words.each do |keyword| 
+    %>
+      <tr>
+        <td style="text-align:right;vertical-align:middle;"> 
+          <%= keyword.string %> 
+        </td>
+        <td style="text-align:center;vertical-align:middle;">
+          <% if keyword.rank <= 0 %>
+            -
+          <% else %>
+            <%= keyword.rank.to_s %> 
+          <% end %>
+        </td>
+        <td></td>
+      </tr>
+    <%
+  end
+end
+
+%>

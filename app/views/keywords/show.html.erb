@@ -1,0 +1,21 @@
+<%= link_to 'Retour', "/projects/" + @project.id.to_s + "/sites/" + @site.id.to_s, :class => "btn btn-default btn-sm" %>
+
+
+<h2>
+  <%= @project.name %> > <%= @site.url %>
+</h2>
+
+<hr />
+
+<h3>
+Mot clef : <%= @keyWord.string %>
+</h3>
+
+<h3>
+Position : 
+	<% if @keyWord.rank <= 0 %>
+      inconnue pour le moment
+    <% else %>
+      <%= @keyWord.rank.to_s %> 
+    <% end %>
+</h3>

@@ -1,0 +1,24 @@
+<%= link_to 'Retour', project_path(@project.id), :class => "btn btn-default btn-sm" %>
+
+
+<h2>
+  <%= @project.name %> > <%= @site.url %>
+</h2>
+
+<hr />
+
+<h3>Liste des mots clef</h3>
+
+<table class="table">
+	<thead>
+		<th style="width:70%">mot clef</th>
+		<th style="width:10%;text-align:center;">Rang</th>
+		<th></th>
+	</thead>
+	<tbody>
+		<%= render @site.key_words %>
+	</tbody>
+</table>
+
+
+<%= render "key_words/form" %>

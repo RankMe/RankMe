@@ -1,0 +1,32 @@
+
+
+
+<h2>Liste des projets</h2>
+ 
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th style="width:70%">Titre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td style="vertical-align:middle"><%= project.id %></td>
+        <td style="vertical-align:middle"><b><%= project.name %></b></td>
+        <td style="text-align:center">
+          <%= link_to 'Consulter', project_path(project), :class => "btn btn-primary btn-sm" %>
+          <%= link_to 'Renomer', edit_project_path(project), :class => 'btn btn-warning btn-xs' %>
+          <%= link_to 'Suppr', project_path(project), :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce projet?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<center>
+  <%= link_to "Créer un nouveau projet", new_project_path, class: "btn btn-success btn-sm" %>
+</center>
