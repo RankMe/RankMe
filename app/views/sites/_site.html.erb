@@ -14,12 +14,7 @@
 	</td>
 </tr>
 
- <!-- TODO : afficher tous les mots clefs du site et leur rang -->
-
 <%
-
-
-
 if site.key_words.nil?
   puts ""
 elsif site.key_words.respond_to?("each")
@@ -41,5 +36,4 @@ elsif site.key_words.respond_to?("each")
     <%
   end
 end
-
 %>
